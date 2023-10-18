@@ -40,7 +40,9 @@
 		  <div class="detail-box text-center" >
 			  <h4>
 				  <strong style="color:#245A98">Gracias por tu consulta.</strong> <br> <small>Te contactaremos brevemente.</small>
-			  </h4>
+			  </h4><br>
+			  <button onclick="redirectToWhatsApp()">QUIERO RECIBIR MAS INFO</button>
+			  <a href="index.html">VOLVER</a>
 		  </div>
 		</div>
 	  </div>
@@ -48,7 +50,46 @@
 </div>
 
 
+<!-- STYLES -->
+<style>
+.detail-box button, .detail-box a{
+    margin-top: 15px;
+    display: inline-block;
+    font-family: 'Merriweather Sans', sans-serif;
+    text-transform: uppercase;
+    padding: 10px 45px;
+    background-color: #245A98;
+    border: 1px solid #245A98;
+    border-radius: 2px;
+    color: #ffffff
+	}
+	
+.detail-box button:hover, .detail-box a:hover{
+	background-color: transparent;
+    color: #245A98;
+}
+</style>
+
+
 <!-- SCRIPTS-->
+
+<!--script redireccionar a Whatsapp-->
+<script>
+         function redirectToWhatsApp() {
+             // Replace '1234567890' with the recipient's phone number
+             // and 'Hello' with your message
+             var phoneNumber = '5491154934480';
+             var message = 'Hola, quiero recibir más info sobre las carreras disponibles.';
+ 
+             // Create the WhatsApp URL with the phone number and message
+             var whatsappURL = 'https://api.whatsapp.com/send?phone=' + phoneNumber + '&text=' + encodeURIComponent(message);
+ 
+             // Redirect to WhatsApp
+             window.location.href = whatsappURL;
+         }
+</script>
+
+
 <script src="js/jquery-3.4.1.min.js"></script>
 <script src="js/bootstrap.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js">
